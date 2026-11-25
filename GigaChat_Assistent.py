@@ -16,7 +16,7 @@ def creat():
     return GigaChat(
         credentials=key,
         scope = "GIGACHAT_API_PERS",
-        verify = False,
+        verify_ssl_certs = False,
         model="GigaChat",
     )
 
@@ -29,24 +29,24 @@ def chat():
     student=creat()
 
     while True:
-        soob=input("ты: ")
+        soob=input("ты: "),strip()
         if soob.lower() in ["выход", "Выход"]:
-            print("Пока-пока! :D")
+            print("\nПока-пока! :D")
             break
         if not soob:
             continue
         massages.append({"role":"user","content":soob,})
         try:
-            response=student.chat.create(messages=massages)
+            response=student.chat.create({"messages":massages})
             assistant_reply = response.messages[0].content[0].text
 
-            print("Ассистент:")
+            print("\nАссистент:")
             print(assistant_reply)
             print()
 
             massages.append({"role":"assistant","content":assistant_reply,})
         except Exception as e:
-            print(f"Ошибка:{e}")
+            print(f"\nОшибка:{e}")
 
 
 if __name__ == "__main__":
