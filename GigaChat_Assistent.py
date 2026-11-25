@@ -17,7 +17,7 @@ def creat():
         credentials=key,
         scope = "GIGACHAT_API_PERS",
         verify_ssl_certs = False,
-        model="GigaChat",
+        model="GigaChat-2",
     )
 
 def chat():
@@ -29,7 +29,7 @@ def chat():
     student=creat()
 
     while True:
-        soob=input("ты: "),strip()
+        soob=input("ты: ").strip()
         if soob.lower() in ["выход", "Выход"]:
             print("\nПока-пока! :D")
             break
