@@ -1,7 +1,7 @@
 from gigachat import GigaChat
 import os
 
-key="MDFhMWU1NDEtODhhNS03NDlkLTg5YzktZjFlZGQ0ZjA5MjUyOmY3MTkzMmFkLTM3NjQtNGNhNy04YjliLTk5NTkyMzFlNDUxNg==" #вставить ключ
+key="" #вставить ключ
 
 sys_prompt="""Ты - ассистент для решения задач по основам программирования.
 Ты должен помогать ученикам и студентам решать задачи по программированию
